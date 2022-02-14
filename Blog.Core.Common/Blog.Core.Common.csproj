@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CofSocket\**" />
+    <Compile Remove="Hbase\**" />
+    <Compile Remove="Kafka\**" />
+    <Compile Remove="RPC\**" />
+    <Compile Remove="StaticHelper\**" />
+    <EmbeddedResource Remove="CofSocket\**" />
+    <EmbeddedResource Remove="Hbase\**" />
+    <EmbeddedResource Remove="Kafka\**" />
+    <EmbeddedResource Remove="RPC\**" />
+    <EmbeddedResource Remove="StaticHelper\**" />
+    <None Remove="CofSocket\**" />
+    <None Remove="Hbase\**" />
+    <None Remove="Kafka\**" />
+    <None Remove="RPC\**" />
+    <None Remove="StaticHelper\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Helper\GeometryClass.cs" />
+    <Compile Remove="LogHelper\ILoggerHelper.cs" />
+    <Compile Remove="LogHelper\LogHelper.cs" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="1.7.0" />
+    <PackageReference Include="InfluxData.Net" Version="8.0.1" />
+    <PackageReference Include="InitQ" Version="1.0.0.7" />
+    <PackageReference Include="Magicodes.IE.Core" Version="2.6.1" />
+    <PackageReference Include="Magicodes.IE.Excel" Version="2.6.1" />
+    <PackageReference Include="Magicodes.IE.Word" Version="2.6.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+    <PackageReference Include="Minio" Version="3.1.13" />
+    <PackageReference Include="nacos-sdk-csharp" Version="1.3.0" />
+    <PackageReference Include="NewLife.Redis" Version="3.9.2021.709" />
+    <PackageReference Include="protobuf-net" Version="3.0.101" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.2.2" />
+    <PackageReference Include="RestSharp" Version="106.11.7" />
+    <PackageReference Include="RSAExtensions" Version="1.0.3" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
+    <PackageReference Include="SmartThreadPool.dll" Version="2.3.0" />
+    <PackageReference Include="SqlSugar.IOC" Version="1.7.0" />
+    <PackageReference Include="SqlSugarCore" Version="5.0.3.8" />
+    <PackageReference Include="StackExchange.Redis" Version="2.2.4" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.10.2" />
+
+    <PackageReference Include="Serilog" Version="2.10.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="4.1.0" />
+    <PackageReference Include="System.Net.NameResolution" Version="4.3.0" />
+    <PackageReference Include="System.Threading.ThreadPool" Version="4.3.0" />
+    <PackageReference Include="WebApiClient.Extensions.DependencyInjection" Version="2.0.3" />
+    <PackageReference Include="WebApiClient.JIT" Version="1.1.4" />
+
+
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ocelot.Provider.Nacos\Ocelot.Provider.Nacos.csproj" />
+  </ItemGroup>
+
+</Project>

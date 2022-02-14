@@ -1,0 +1,74 @@
+﻿{
+  // 转发路由，数组中的每个元素都是某个服务的一组路由转发规则
+  "Routes": [
+    //{
+    //  "ServiceName": "ProductApi",
+    //  // Uri方案，http、https
+    //  "DownstreamScheme": "http",
+    //  // 下游（服务提供方）服务路由模板
+    //  "DownstreamPathTemplate": "/productapi/{everything}",
+    //  // 上游（客户端，服务消费方）请求路由模板
+    //  "UpstreamPathTemplate": "/productapi/{everything}",
+    //  "UpstreamHttpMethod": [ "Get", "Post" ],
+    //  "LoadBalancerOptions": {
+    //    "Type": "RoundRobin" //轮询     
+    //  },
+    //  "UseServiceDiscovery": true
+    //},
+    //{
+    //  "ServiceName": "FLD-Weight-API",
+    //  // Uri方案，http、https
+    //  "DownstreamScheme": "http",
+    //  // 下游（服务提供方）服务路由模板
+    //  "DownstreamPathTemplate": "/api/{everything}",
+    //  // 上游（客户端，服务消费方）请求路由模板
+    //  "UpstreamPathTemplate": "/api/{everything}",
+    //  "UpstreamHttpMethod": [ "Get", "Post" ],
+    //  "LoadBalancerOptions": {
+    //    "Type": "RoundRobin" //轮询     
+    //  },
+    //  "UseServiceDiscovery": true
+    //},
+
+    //{
+    //  "ServiceName": "Castic.Bigdata.Illagal",
+    //  "DownstreamScheme": "http",
+    //  "DownstreamPathTemplate": "/illagal/{everything}",
+    //  "UpstreamPathTemplate": "/illagal/{everything}",
+    //  "UpstreamHttpMethod": [ "Get", "Post" ],
+    //  "LoadBalancerOptions": {
+    //    "Type": "RoundRobin"
+    //  },
+    //  "UseServiceDiscovery": true
+    //},
+    {
+      "ServiceName": "*****.****.Api",
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/api/{everything}",
+      "UpstreamPathTemplate": "/api/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ],
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "UseServiceDiscovery": true
+    },
+    {
+      "DownstreamPathTemplate": "/swagger/V2/swagger.json",
+      "DownstreamScheme": "http",
+      "ServiceName": "****.*****.Api",
+      "LoadBalancer": "RoundRobin",
+      "UseServiceDiscovery": true,
+      "UpstreamPathTemplate": "/baseapi/swagger.json",
+      "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ]
+    }
+
+  ],
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Type": "Nacos"
+    }
+  },
+  "DelegatingHandlers": [
+    "HeaderDelegatingHandler"
+  ]
+}
